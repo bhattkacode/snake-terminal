@@ -55,7 +55,8 @@ void moveSnake()
     printSnake();
 }
 
-void addFood(uniform_int_distribution<int> distx, uniform_int_distribution<int> disty)
+void addFood(uniform_int_distribution<int> distx,
+    uniform_int_distribution<int> disty)
 {
     if ((posx >= foodx && posx < foodx + 2) && posy == foody) {
         score++;
@@ -91,7 +92,7 @@ int main(int argc, char* argv[])
     } else {
         border = true;
         int sizex = atoi(argv[1]);
-        int sizey = atoi(argv[2]);
+        int sizey = atoi(argv[2]) / 2;
         maxy = (rows + sizey) / 2;
         miny = (rows - sizey) / 2;
         maxx = (cols + sizex) / 2;
